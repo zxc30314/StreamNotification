@@ -1,0 +1,208 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>Stream_Notification</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <LangVersion>preview</LangVersion>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="DSharpPlus" Version="4.2.0" />
+      <PackageReference Include="DSharpPlus.CommandsNext" Version="4.2.0" />
+      <PackageReference Include="DSharpPlus.SlashCommands" Version="4.2.0" />
+      <PackageReference Include="DSharpPlus.VoiceNext" Version="4.2.0" />
+      <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Yaml" Version="2.0.0-preview2" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+      <PackageReference Include="Quartz" Version="3.5.0" />
+      <PackageReference Include="ReactiveProperty" Version="8.2.0" />
+      <PackageReference Include="RestSharp" Version="108.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Release\net6.0\DSharpPlus.CommandsNext.dll" />
+      <Content Include="bin\Release\net6.0\DSharpPlus.dll" />
+      <Content Include="bin\Release\net6.0\DSharpPlus.SlashCommands.dll" />
+      <Content Include="bin\Release\net6.0\DSharpPlus.VoiceNext.dll" />
+      <Content Include="bin\Release\net6.0\Emzi0767.Common.dll" />
+      <Content Include="bin\Release\net6.0\HtmlAgilityPack.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.Binder.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.CommandLine.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.Json.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Configuration.Yaml.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.FileProviders.Physical.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Hosting.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Logging.Abstractions.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Logging.Configuration.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Logging.Console.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Logging.Debug.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Logging.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Logging.EventLog.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Logging.EventSource.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Options.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Extensions.Primitives.dll" />
+      <Content Include="bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll" />
+      <Content Include="bin\Release\net6.0\Newtonsoft.Json.dll" />
+      <Content Include="bin\Release\net6.0\Quartz.dll" />
+      <Content Include="bin\Release\net6.0\ReactiveProperty.Core.dll" />
+      <Content Include="bin\Release\net6.0\ReactiveProperty.dll" />
+      <Content Include="bin\Release\net6.0\RestSharp.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win-x64\native\libopus.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win-x64\native\libsodium.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win-x86\native\libopus.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win-x86\native\libsodium.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll" />
+      <Content Include="bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
+      <Content Include="bin\Release\net6.0\Stream Notification.deps.json" />
+      <Content Include="bin\Release\net6.0\Stream Notification.dll" />
+      <Content Include="bin\Release\net6.0\Stream Notification.exe" />
+      <Content Include="bin\Release\net6.0\Stream Notification.pdb" />
+      <Content Include="bin\Release\net6.0\Stream Notification.runtimeconfig.json" />
+      <Content Include="bin\Release\net6.0\System.Configuration.ConfigurationManager.dll" />
+      <Content Include="bin\Release\net6.0\System.Diagnostics.EventLog.dll" />
+      <Content Include="bin\Release\net6.0\System.Drawing.Common.dll" />
+      <Content Include="bin\Release\net6.0\System.Reactive.dll" />
+      <Content Include="bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll" />
+      <Content Include="bin\Release\net6.0\System.Security.Permissions.dll" />
+      <Content Include="bin\Release\net6.0\System.Text.Encodings.Web.dll" />
+      <Content Include="bin\Release\net6.0\System.Text.Json.dll" />
+      <Content Include="bin\Release\net6.0\System.Windows.Extensions.dll" />
+      <Content Include="bin\Release\net6.0\YamlDotNet.dll" />
+      <Content Include="obj\Debug\net6.0\apphost.exe" />
+      <Content Include="obj\Debug\net6.0\PublishOutputs.fab9fe140e.txt" />
+      <Content Include="obj\Debug\net6.0\refint\Stream Notification.dll" />
+      <Content Include="obj\Debug\net6.0\ref\Stream Notification.dll" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.AssemblyInfoInputs.cache" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.assets.cache" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.csproj.AssemblyReference.cache" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.csproj.CopyComplete" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.dll" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.GeneratedMSBuildEditorConfig.editorconfig" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.genruntimeconfig.cache" />
+      <Content Include="obj\Debug\net6.0\Stream Notification.pdb" />
+      <Content Include="obj\project.assets.json" />
+      <Content Include="obj\project.nuget.cache" />
+      <Content Include="obj\project.packagespec.json" />
+      <Content Include="obj\Release\net6.0\apphost.exe" />
+      <Content Include="obj\Release\net6.0\PublishOutputs.fab9fe140e.txt" />
+      <Content Include="obj\Release\net6.0\refint\Stream Notification.dll" />
+      <Content Include="obj\Release\net6.0\ref\Stream Notification.dll" />
+      <Content Include="obj\Release\net6.0\Stream Notification.AssemblyInfoInputs.cache" />
+      <Content Include="obj\Release\net6.0\Stream Notification.assets.cache" />
+      <Content Include="obj\Release\net6.0\Stream Notification.csproj.AssemblyReference.cache" />
+      <Content Include="obj\Release\net6.0\Stream Notification.csproj.CopyComplete" />
+      <Content Include="obj\Release\net6.0\Stream Notification.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Release\net6.0\Stream Notification.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Release\net6.0\Stream Notification.dll" />
+      <Content Include="obj\Release\net6.0\Stream Notification.GeneratedMSBuildEditorConfig.editorconfig" />
+      <Content Include="obj\Release\net6.0\Stream Notification.genruntimeconfig.cache" />
+      <Content Include="obj\Release\net6.0\Stream Notification.pdb" />
+      <Content Include="obj\rider-publish\DSharpPlus.CommandsNext.dll" />
+      <Content Include="obj\rider-publish\DSharpPlus.dll" />
+      <Content Include="obj\rider-publish\DSharpPlus.SlashCommands.dll" />
+      <Content Include="obj\rider-publish\DSharpPlus.VoiceNext.dll" />
+      <Content Include="obj\rider-publish\Emzi0767.Common.dll" />
+      <Content Include="obj\rider-publish\HtmlAgilityPack.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.Abstractions.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.Binder.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.CommandLine.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.Json.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.UserSecrets.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Configuration.Yaml.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.DependencyInjection.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.FileProviders.Physical.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.FileSystemGlobbing.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Hosting.Abstractions.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Hosting.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Logging.Abstractions.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Logging.Configuration.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Logging.Console.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Logging.Debug.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Logging.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Logging.EventLog.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Logging.EventSource.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Options.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Extensions.Primitives.dll" />
+      <Content Include="obj\rider-publish\Microsoft.Win32.SystemEvents.dll" />
+      <Content Include="obj\rider-publish\Newtonsoft.Json.dll" />
+      <Content Include="obj\rider-publish\Quartz.dll" />
+      <Content Include="obj\rider-publish\ReactiveProperty.Core.dll" />
+      <Content Include="obj\rider-publish\ReactiveProperty.dll" />
+      <Content Include="obj\rider-publish\RestSharp.dll" />
+      <Content Include="obj\rider-publish\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll" />
+      <Content Include="obj\rider-publish\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+      <Content Include="obj\rider-publish\runtimes\win-x64\native\libopus.dll" />
+      <Content Include="obj\rider-publish\runtimes\win-x64\native\libsodium.dll" />
+      <Content Include="obj\rider-publish\runtimes\win-x86\native\libopus.dll" />
+      <Content Include="obj\rider-publish\runtimes\win-x86\native\libsodium.dll" />
+      <Content Include="obj\rider-publish\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll" />
+      <Content Include="obj\rider-publish\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll" />
+      <Content Include="obj\rider-publish\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll" />
+      <Content Include="obj\rider-publish\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+      <Content Include="obj\rider-publish\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll" />
+      <Content Include="obj\rider-publish\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
+      <Content Include="obj\rider-publish\Stream Notification.deps.json" />
+      <Content Include="obj\rider-publish\Stream Notification.dll" />
+      <Content Include="obj\rider-publish\Stream Notification.exe" />
+      <Content Include="obj\rider-publish\Stream Notification.pdb" />
+      <Content Include="obj\rider-publish\Stream Notification.runtimeconfig.json" />
+      <Content Include="obj\rider-publish\System.Configuration.ConfigurationManager.dll" />
+      <Content Include="obj\rider-publish\System.Diagnostics.EventLog.dll" />
+      <Content Include="obj\rider-publish\System.Drawing.Common.dll" />
+      <Content Include="obj\rider-publish\System.Reactive.dll" />
+      <Content Include="obj\rider-publish\System.Security.Cryptography.ProtectedData.dll" />
+      <Content Include="obj\rider-publish\System.Security.Permissions.dll" />
+      <Content Include="obj\rider-publish\System.Text.Encodings.Web.dll" />
+      <Content Include="obj\rider-publish\System.Text.Json.dll" />
+      <Content Include="obj\rider-publish\System.Windows.Extensions.dll" />
+      <Content Include="obj\rider-publish\YamlDotNet.dll" />
+      <Content Include="obj\rider.project.restore.info" />
+      <Content Include="obj\Stream Notification.csproj.nuget.dgspec.json" />
+      <Content Include="obj\Stream Notification.csproj.nuget.g.props" />
+      <Content Include="obj\Stream Notification.csproj.nuget.g.targets" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
+      <Compile Include="obj\Debug\net6.0\Stream Notification.AssemblyInfo.cs" />
+      <Compile Include="obj\Debug\net6.0\Stream Notification.GlobalUsings.g.cs" />
+      <Compile Include="obj\Release\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
+      <Compile Include="obj\Release\net6.0\Stream Notification.AssemblyInfo.cs" />
+      <Compile Include="obj\Release\net6.0\Stream Notification.GlobalUsings.g.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="obj\rider-publish\save" />
+    </ItemGroup>
+
+</Project>

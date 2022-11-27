@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stream Notification", "Stream Notification\Stream Notification.csproj", "{97F197F0-E645-4831-92D5-4C75F92C4902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{3309D2DC-39F0-4F73-8151-4AA89D0A27F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97F197F0-E645-4831-92D5-4C75F92C4902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F197F0-E645-4831-92D5-4C75F92C4902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F197F0-E645-4831-92D5-4C75F92C4902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F197F0-E645-4831-92D5-4C75F92C4902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3309D2DC-39F0-4F73-8151-4AA89D0A27F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3309D2DC-39F0-4F73-8151-4AA89D0A27F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3309D2DC-39F0-4F73-8151-4AA89D0A27F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3309D2DC-39F0-4F73-8151-4AA89D0A27F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
