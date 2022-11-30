@@ -24,7 +24,7 @@
                 }
             }
 
-            SendMessage(list);
+            await SendMessage(list);
         }
         catch (Exception e)
         {
@@ -35,25 +35,27 @@
     }
 
 
-    private static void SendMessage(List<YoutubeTool.LiveData> list)
+    private async Task SendMessage(List<YoutubeTool.LiveData> list)
     {
         var allData = new DataBase().GetAllData();
         foreach (var dataBase in allData.Result)
         {
             var channelAsync = DiscordBot._discordClient.GetChannelAsync(dataBase.DiscordChannelID).Result;
-            var messages = channelAsync.GetMessagesAfterAsync(50).Result.Select(x => x.Content);
+            var messages = channelAsync.GetMessagesAsync(50).Result.Select(x => x.Content);
             foreach (var s in dataBase.YoutubeChannelID)
             {
                 var liveData = list.Find(x => x.ChannelId == s.Key);
                 if (liveData != null)
                 {
-                   
+
                     var content = $"{liveData.ChannelName} Start Streaming \n{liveData.Title} \n{liveData.Description} \n{liveData.Url}";
                     var contains = messages.Contains(content);
                     if (!contains)
                     {
-                        DiscordBot._discordClient.SendMessageAsync(channelAsync, content);
+                        await DiscordBot._discordClient.SendMessageAsync(channelAsync, content);
                     }
+
+                    await Task.Delay(100);
                 }
             }
         }
