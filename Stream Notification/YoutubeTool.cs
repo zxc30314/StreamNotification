@@ -2,8 +2,6 @@ using System.Web;
 using Emzi0767.Utilities;
 using HtmlAgilityPack;
 using Newtonsoft.Json.Linq;
-using Quartz.Util;
-using RestSharp;
 
 public class HoloTool
 {

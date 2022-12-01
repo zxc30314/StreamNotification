@@ -59,30 +59,6 @@
             "HtmlAgilityPack": {
               "target": "Package",
               "version": "[1.11.46, )"
-            },
-            "Microsoft.Extensions.Configuration.Yaml": {
-              "target": "Package",
-              "version": "[2.0.0-preview2, )"
-            },
-            "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.Extensions.Hosting": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Quartz": {
-              "target": "Package",
-              "version": "[3.5.0, )"
-            },
-            "ReactiveProperty": {
-              "target": "Package",
-              "version": "[8.2.0, )"
-            },
-            "RestSharp": {
-              "target": "Package",
-              "version": "[108.0.3, )"
             }
           },
           "imports": [
@@ -147,7 +123,7 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.1.0, )"
+              "version": "[17.4.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -160,10 +136,6 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.2.1, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[3.1.2, )"
             }
           },
           "imports": [

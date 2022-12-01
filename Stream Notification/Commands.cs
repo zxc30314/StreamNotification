@@ -4,11 +4,6 @@ using DSharpPlus.Entities;
 using DSharpPlus.SlashCommands;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
-using Quartz;
-using Quartz.Impl;
-using Reactive.Bindings;
-using RestSharp;
-using RestSharp.Authenticators;
 using Tool.Observable;
 
 public class Commands : ApplicationCommandModule
